@@ -25,12 +25,13 @@ Code: https://github.com/springinpractice
 		<version>1.0-RELEASE</version>
 	</parent>
 
-	<artifactId>com.springinpractice.06_04</artifactId>
+	<artifactId>com.springinpractice.06_06</artifactId>
 	<packaging>war</packaging>
 
-	<name>Spring in Practice Recipe 6.4</name>
+	<name>Spring in Practice Recipe 6.6</name>
 	<description>
-		Recipe 6.4 shows how to use a database as an authentication source.
+		Recipe 6.6 shows how to use a custom user service and user principal with Spring Security. We incorporate the
+		registration capability from chapter 4.
 	</description>
 	<url>http://springinpractice.com/</url>
 
@@ -42,6 +43,17 @@ Code: https://github.com/springinpractice
 	<dependencies>
 
 		<!-- Spring in Practice dependencies -->
+		<dependency>
+			<groupId>${project.groupId}</groupId>
+			<artifactId>com.springinpractice.api</artifactId>
+			<version>1.0-RELEASE</version>
+		</dependency>
+		<dependency>
+			<groupId>${project.groupId}</groupId>
+			<artifactId>com.springinpractice.deps-hibernate</artifactId>
+			<version>1.0-RELEASE</version>
+			<type>pom</type>
+		</dependency>
 		<dependency>
 			<groupId>${project.groupId}</groupId>
 			<artifactId>com.springinpractice.deps-web</artifactId>

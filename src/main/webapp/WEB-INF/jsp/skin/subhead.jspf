@@ -2,6 +2,7 @@
 <%@ taglib prefix="security" uri="http://www.springframework.org/security/tags" %>
 
 <c:url var="homeUrl" value="/home.html" />
+<c:url var="registerUrl" value="/users/new.html" />
 <c:url var="loginUrl" value="/login.html" />
 <c:url var="logoutUrl" value="/j_spring_security_logout" />
 
@@ -10,18 +11,21 @@
 		<div id="topNav">
 			<ul>
 				<li><a href="${homeUrl}">Home</a></li>
+				<li><a href="${registerUrl}">Register</a></li>
 			</ul>
 		</div>
 	</div>
 	<div class="yui-u">
-		<div id="sessionInfo">
-			<security:authorize access="isAnonymous()">
+		<security:authorize access="isAnonymous()">
+			<div id="sessionInfo">
 				Hi, guest. <a href="${loginUrl}">Log in</a>
-			</security:authorize>
-			<security:authorize access="isAuthenticated()">
-				Hi, <security:authentication property="principal.username" />.
+			</div>
+		</security:authorize>
+		<security:authorize access="isAuthenticated()">
+			<div id="sessionInfo">
+				Hi, <security:authentication property="principal.fullName" />.
 				<a href="${logoutUrl}">Log out</a>
-			</security:authorize>
-		</div>
+			</div>
+		</security:authorize>
 	</div>
 </div>
