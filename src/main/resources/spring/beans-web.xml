@@ -27,6 +27,7 @@ Code: https://github.com/springinpractice
 	<mvc:default-servlet-handler />
 	<mvc:view-controller path="/" view-name="redirect:/home.html" />
 	<mvc:view-controller path="/home.html" view-name="extras/home" />
+	<mvc:view-controller path="/login.html" />
 
 	<bean class="org.springframework.web.servlet.view.InternalResourceViewResolver"
 		p:viewClass="org.springframework.web.servlet.view.JstlView"
